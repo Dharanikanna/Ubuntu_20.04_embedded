@@ -17,3 +17,5 @@ if ERRORLEVEL 1 (
 ) else (
     echo Docker image pushed successfully.
 )
+
+@REM Above this working Docker push command trying below for proper commit the state

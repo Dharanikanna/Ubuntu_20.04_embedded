@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     gdb \
     wget \
     unzip \
+    gcc-arm-none-eabi \
     software-properties-common
 
 # Install Renode
@@ -23,10 +24,16 @@ RUN apt-get update && apt-get install -y \
 #    rm renode.tar.gz
 
 # Update PATH environment variable for Renode
-ENV PATH="/opt/renode:$PATH"
+# ENV PATH="/opt/renode:$PATH"
+
+# Expose NoMachine's default port
+EXPOSE 4000
+
+# Start NoMachine server
+CMD ["/usr/NX/bin/nxserver", "--startup"]
 
 # Set working directory in the container
-# WORKDIR /usr/src/embedded_emulator
+WORKDIR /usr/src/embedded_emulator
 
 # Copy the current directory contents into the container
 # COPY . .
