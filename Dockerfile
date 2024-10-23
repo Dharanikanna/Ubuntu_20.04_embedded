@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     unzip \
     gcc-arm-none-eabi \
+    git \
     software-properties-common
 
 # Install Renode
